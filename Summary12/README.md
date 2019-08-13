@@ -1,5 +1,5 @@
 # Class对象绑定
-## v-bind:class
+## v-bind:class  (缩写可以省略v-bind)
 为html标记绑定样式单class对象。
 ```
 <div id="myApp">
