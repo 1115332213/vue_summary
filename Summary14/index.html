@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary14</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">        
+        <p v-show="seen">这里是该篇文章的题目</p>
+        <button type="button" @click="btnClick">click</button>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                seen: true
+            },
+            methods: {
+                btnClick: function(){
+                    this.seen = !this.seen;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
