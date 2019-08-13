@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary11</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div id="myApp">
+        <p v-bind:class="{active: isActive}">红色字体1</p>
+        <p :class="{active: isActive}">红色字体2</p>
+        <button @click="changeColor">改变颜色</button>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                isActive: true
+            },
+            methods: {
+                changeColor: function(){
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
