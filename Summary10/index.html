@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary10</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>  
+    <div id="myApp">
+        <p>HM 的一件羽绒服售价为{{price}}元, 那它的含税价格为{{priceInTax}}元, 那么它大概价值{{priceToDollar}}美元</p>
+        <button type="button" @click="btnClick(3000)">这次是给含税价格设定为3000元</button>
+        <!-- 上次是给price加上1000元 -->
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                price: 2000,
+            },
+            computed: {
+                priceInTax: {
+                    get: function(){
+                        return Math.round(this.price * 1.08);
+                    },
+                    set: function(value){
+                        this.price = Math.round(value/1.08);
+                    }
+                },
+                priceToDollar: function(){
+                    return Math.round(this.priceInTax / 7.0);
+                }
+            },
+            methods: {
+                btnClick: function(value){
+                    this.priceInTax = Math.round(value);
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>
