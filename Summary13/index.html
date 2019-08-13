@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Summary13</title>
+</head>
+<body>
+    <div id="myApp">
+        <p>考试成绩</p>
+        <p v-if="score == 0">成绩未公布</p>
+        <p v-else-if="score < 60">{{score}}不及格</p>
+        <p v-else-if="score < 80">{{score}}中等</p>
+        <p v-else>{{score}}优秀</p>
+        <button type="button" @click="btnClick">公布成绩</button>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                score: 0
+            },
+            methods: {
+                btnClick: function(){
+                    this.score = Math.round(Math.random() * 100);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
