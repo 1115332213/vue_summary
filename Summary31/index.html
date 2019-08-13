@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary31</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <my-item pname="Tom"> <span style="color:red;"> 你爱吃什么？</span></my-item>
+        <my-item pname="Peter"> 你最喜欢的运动？</my-item>
+        <my-item pname="Sue"> 喜不喜欢吃西瓜？</my-item>
+    </div>
+    <script>
+        Vue.component("my-item", {
+            props: ["pname"],
+            template: "<div>"
+            + "<p>Hello {{pname}}</p>"
+            + "<slot></slot>" 
+            + "</div>"
+        })
+        var myApp = new Vue({
+            el: "#myApp"
+        })
+    </script>
+</body>
+</html>
