@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary03</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <p v-if="seen"><h1>Tom杂货店开张了</h1></p>
+        <p v-if="hidden">上午所有物品统统8折</p>
+        物品列表
+        <hr>
+        <ol>
+            <li v-for="item in items">{{item.name}}: {{item.price}}元</li>
+        </ol>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                seen: true,
+                hidden: false,
+                items: [
+                    {"name": "苹果", "price": "3.00"},
+                    {"name": "梨", "price":  "4.00"},
+                    {"name": "牛肉", "price": "20.00"}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
