@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary08</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <p>HM 的一件羽绒服售价为{{price}}元, 那它的含税价格为{{priceInTax}}元, 那么它大概价值{{priceToDollar}}美元</p>
+    </div>
+    <script>
+        var myApp =new Vue({
+            el: "#myApp",
+            data: {
+                price: 1200
+            },
+            computed: {
+                priceInTax: function(){
+                    return this.price * 1.05;
+                },
+                priceToDollar: function(){
+                    return Math.round(this.priceInTax / 7.0);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
