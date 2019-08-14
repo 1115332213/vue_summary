@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary30</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <add-method :a="6" :b="12" @event_add="addListener"></add-method>
+        <p>
+        the result is {{result}}
+        </p>
+    </div>
+    <script>
+        Vue.component("add-method", {
+            props: ["a", "b"],
+            template: "<div><button @click=btnEventGenerate>click</button></div>",
+            methods: {
+                btnEventGenerate: function(){
+                    this.$emit("event_add", {
+                        result: this.a + this.b
+                    })
+                }
+            }
+        })
+
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                result: 0
+            },
+            methods:{
+                addListener: function(val){
+                    this.result = val.result;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
