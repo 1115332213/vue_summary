@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary22</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <div>
+            <label for="name">姓名:</label>
+            <input type="text" id="name" v-model.lazy="name" @change="focusChange">
+            <p v-if="seen">可注册</p>
+        </div>
+        <div>
+            <label for="age">年龄:</label>
+            <input type="number" id="age" v-model.nubmer="age">
+        </div>
+        <div>
+            <label for="info">信息:</label>
+            <textarea v-model.trim="info" id="info" cols="30" rows="10"></textarea>
+        </div>
+
+        <p>
+            姓名:{{name}}
+        </p>
+        <p>
+            年龄:{{age}}
+        </p>
+        <p>
+            信息:{{info}}
+        </p>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                name: "",
+                age: "",
+                info: "",
+                seen: false
+            },
+            methods: {
+                focusChange: function(){
+                    if (this.name.length > 0) this.seen=true;
+                    else this.seen=false;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
