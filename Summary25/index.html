@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary25</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <table border="1">
+            <tr><td>序号</td><td>名称</td></tr>
+            <tr is="my-item1"></tr>
+            <tr is="my-item2"></tr>
+            <!-- 
+                <my-item1></my-item1>
+                <my-item2></my-item2> 
+            -->
+        </table>
+    </div>
+    <script>
+        Vue.component("my-item1",{
+            template: "<tr><td>1</td><td>西瓜</td></tr>"
+        });
+        Vue.component("my-item2",{
+            template: "<tr><td>2</td><td>橙子</td></tr>"
+        })
+        var myApp = new Vue({
+            el: "#myApp"
+        })
+    </script>
+</body>
+</html>
