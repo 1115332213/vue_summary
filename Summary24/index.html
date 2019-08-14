@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary24</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <ol>
+            <my-item1></my-item1>
+            <my-item2></my-item2>
+        </ol>
+    </div>
+    <script>   
+        var component1 = {
+            template: "<li>我要去吃饭<li>"
+        }
+        var component2 = {
+            template: "<li>我要去喝水<li>"
+        }
+        var myApp = new Vue({
+            el: "#myApp",
+            data: {
+                
+            },
+            components: {
+                "my-item1": component1,
+                "my-item2": component2
+            }
+        })
+    </script>
+</body>
+</html>
