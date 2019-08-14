@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Summary23</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+        <ol>        
+            <my-item1></my-item1>
+            <my-item2></my-item2>
+        </ol>
+    </div>
+    <script>
+    Vue.component("my-item1", {
+        template: "<li>让我们一起摇摆</li>"
+    })
+    Vue.component("my-item2", {
+        template: "<li>让我们一起看电视吧</li>"
+    })
+    var myApp = new Vue({
+        el: "#myApp"
+    })
+    </script>
+</body>
+</html>
